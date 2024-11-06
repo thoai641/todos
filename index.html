@@ -1,51 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Web</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./main.js" defer></script>
-  </head>
-
-  <body class="flex items-center justify-center bg-[#f5f5f5]">
-    <div class="flex flex-col">
-      <h1
-        class="text-[#b83f45] text-[80px] text-center my-[40px] font-extralight hover:text-cyan-500"
-      >
-        todos
-      </h1>
-      <div class="flex relative">
-        <div class="absolute top-[20px] left-[20px]" id="toggle"></div>
-        <input
-          id="input"
-          placeholder="What needs to be done?"
-          class="pl-[60px] py-[16px] pr-[16px] shadow-2xl h-[65px] w-[550px] text-2xl font-extralight"
-        />
-      </div>
-      <ul
-        class="bg-white shadow-2xl border-t border-[#e6e6e6] text-2xl text-[#484848]"
-        id="list"
-      ></ul>
-      <footer
-        id="footer"
-        class="hidden px-[15px] py-[10px] bg-white flex justify-between shadow-2xl"
-      >
-        <div id="counter">1 item left</div>
-        <div class="flex gap-2.5" id="filter">
-          <a id="all" href="#/" class="p-1 border-pink-500">All</a>
-          <a id="active" href="#/active" class="p-1 border-pink-500">Active</a>
-          <a id="completed" href="#/completed" class="p-1 border-pink-500">Completed</a>
-        </div>
-        <button id="clear">Clear completed</button>
-      </footer>
-      <footer
-        class="text-[11px] mt-[65px] text-center text-[#4d4d4d] font-light"
-      >
-        <p>Double-click to edit a todo</p>
-        <p>Created by the TodoMVC Team</p>
-        <p>Part of TodoMVC</p>
-      </footer>
+</head>
+<body class="flex items-center justify-center dark:bg-zinc-900 bg-white">
+    <div class="fixed right-5 top-5 cursor-pointer" id="toggle-theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" 
+            stroke-linejoin="round" class="w-6 h-6"
+        >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                class="fill-sky-400/20 stroke-sky-500"
+            ></path>
+            <path
+                d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                class="stroke-sky-500"
+            ></path>
+        </svg>
     </div>
-  </body>
+
+    <div class="flex flex-col">
+        <h1 
+            class=" text-[#b83f45] dark:text-cyan-500 text-[80px] text-center my-[40px] font-extralight hover:text-cyan-500">
+            todos
+        </h1>
+        <div class="flex relative"> 
+            <div class="absolute top-[20px] left-[20px]" id="toggle"></div>
+            <input id="input" 
+                placeholder="What needs to be done?" 
+                class="pl-[60px] py-[16px] pr-[16px] dark:bg-slate-600 dark:text-white shadow-2xl h-[65px] w-[550px] text-2xl font-extralight outline-none">
+        </div>
+        <ul id="list" 
+            class="bg-white dark:bg-slate-600 shadow-2xl border-t border-[#e6e6e6] text-2xl text-[#484848] dark:text-[#e6e6e6] font-extralight">
+        </ul>
+        <footer id="footer" 
+        class="hidden px-[15px] py-[10px] bg-white dark:bg-slate-600 dark:text-white flex justify-between shadow-2xl">
+            <div id="counter">1 item left</div>    
+                <div class="flex gap-2.5" id="filter">
+                <a href="#/" class="p-1 border-pink-500 dark:border-cyan-500">All</a>
+                <a href="#/active" class="p-1 border-pink-500 dark:border-cyan-500">Active</a>
+                <a href="#/completed" class="p-1 border-pink-500 dark:border-cyan-500">Completed</a>
+            </div>  
+            <button class="hover:underline" id="clear-completed">Clear completed</button>
+        </footer>
+        <footer class="text-[11px] mt-[65px] text-center text-[#4d4d4d] dark:text-white font-light">
+            <p>Double-click to edit a todo</p>
+            <p>Created by the TodoMVC Team</p>
+            <p>Part of TodoMVC</p>
+        </footer>
+    </div>
+</body>
 </html>
